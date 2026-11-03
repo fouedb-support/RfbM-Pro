@@ -65,6 +65,8 @@ let installPrompt = null;
 const installBtn =
     document.getElementById("installBtn");
 
+installBtn.style.display = "inline-block";
+
 const installMessage =
     document.getElementById("installMessage");
 
@@ -76,7 +78,7 @@ window.addEventListener(
 
         installPrompt = event;
 
-        installBtn.style.display = "inline-block";
+       /* installBtn.style.display = "inline-block";*/
 
         installMessage.textContent =
             "RfbM est prête à être installée.";
