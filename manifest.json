@@ -5,7 +5,7 @@
   "short_name": "RfbM",
   "description": "Non-Stop Music - 24/24 Hours & 7/7 Days",
   "start_url": "/RfbM-Pro/",
-  "scope": "/RfbM-Pro/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#fe5000",
