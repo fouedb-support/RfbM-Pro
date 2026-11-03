@@ -1,11 +1,11 @@
 
 {
-  "id": "/",
+  "id": "/RfbM-Pro/",
   "name": "Radio fouedb Music",
   "short_name": "RfbM",
   "description": "Non-Stop Music - 24/24 Hours & 7/7 Days",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "/RfbM-Pro/",
+  "scope": "/RfbM-Pro/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#fe5000",
