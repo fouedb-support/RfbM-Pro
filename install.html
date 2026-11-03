@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Install RfbM App</title>
+
+<link rel="manifest" href="/manifest.json">
+
+<meta name="theme-color" content="#fe5000">
+
+<style>
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    padding: 25px;
+}
+
+h2 {
+    color: #fe5000;
+}
+
+#installBtn {
+    display: none;
+    padding: 14px 28px;
+    border: 0;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #fe5000, #ff9900);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Radio fouedb Music</h2>
+    <p>Install RfbM App</p>
+
+    <button id="installBtn">
+        ⬇ Install RfbM App
+    </button>
+
+    <p id="installMessage"></p>
+</div>
+
+<script>
+let installPrompt = null;
+
+const installBtn =
+    document.getElementById("installBtn");
+
+const installMessage =
+    document.getElementById("installMessage");
+
+window.addEventListener(
+    "beforeinstallprompt",
+    function(event) {
+
+        event.preventDefault();
+
+        installPrompt = event;
+
+        installBtn.style.display = "inline-block";
+
+        installMessage.textContent =
+            "RfbM est prête à être installée.";
+    }
+);
+
+installBtn.addEventListener("click", async function() {
+
+    if (!installPrompt) return;
+
+    installPrompt.prompt();
+
+    const result = await installPrompt.userChoice;
+
+    if (result.outcome === "accepted") {
+
+        installMessage.textContent =
+            "Merci d'avoir installé RfbM !";
+
+        installBtn.style.display = "none";
+    }
+
+    installPrompt = null;
+});
+
+window.addEventListener("appinstalled", function() {
+
+    installMessage.textContent =
+        "RfbM est installée avec succès.";
+
+    installBtn.style.display = "none";
+});
+</script>
+
+</body>
+</html>
