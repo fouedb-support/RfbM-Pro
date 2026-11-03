@@ -78,10 +78,8 @@ window.addEventListener(
 
         installPrompt = event;
 
-       /* installBtn.style.display = "inline-block";*/
-
         installMessage.textContent =
-            "RfbM est prête à être installée.";
+            "RfbM is ready to be installed.";
     }
 );
 
@@ -96,7 +94,7 @@ installBtn.addEventListener("click", async function() {
     if (result.outcome === "accepted") {
 
         installMessage.textContent =
-            "Merci d'avoir installé RfbM !";
+            "Thank you for installing RfbM !";
 
         installBtn.style.display = "none";
     }
@@ -107,7 +105,7 @@ installBtn.addEventListener("click", async function() {
 window.addEventListener("appinstalled", function() {
 
     installMessage.textContent =
-        "RfbM est installée avec succès.";
+        "RfbM has been successfully installed.";
 
     installBtn.style.display = "none";
 });
